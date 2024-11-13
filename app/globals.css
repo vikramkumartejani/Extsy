@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/fonts/Metropolis-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Metropolis", sans-serif;
+}
+
+/* Button Gradient Border */
+.gradient-border {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-border::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 44px;
+  background: linear-gradient(
+    1.93deg,
+    #f0c2db 15.71%,
+    #f1c8d9 52.62%,
+    #ede3e1 104.29%,
+    #ffffff 163.34%
+  );
+  z-index: -1;
+}
+
+.gradient-border > .inner-button {
+  position: relative;
+  background: linear-gradient(
+    301deg,
+    #f0c2db 24.08%,
+    #f1c8d9 38.36%,
+    #ede3e1 58.34%,
+    #ffffff 81.18%
+  );
+  border-radius: 42px;
+  color: #0b0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  min-width: 227px;
+}
+
+@media screen and (max-width: 480px) {
+  .gradient-border > .inner-button {
+    height: 48px;
+    min-width: 100%;
+  }
+}
